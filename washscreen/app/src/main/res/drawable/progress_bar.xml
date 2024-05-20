@@ -1,0 +1,20 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Empty portion -->
+    <item
+        android:id="@android:id/background"
+        android:gravity="start|center_vertical">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+    <!-- Filled portion -->
+    <item
+        android:id="@android:id/progress"
+        android:gravity="start|center_vertical">
+        <clip>
+            <shape android:shape="rectangle">
+                <solid android:color="@color/maroon" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

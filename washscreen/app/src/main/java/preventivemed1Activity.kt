@@ -1,0 +1,2 @@
+class preventivemed1Activity {
+}

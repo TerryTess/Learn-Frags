@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/baige"
+    android:layout_height="wrap_content">
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/baige"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:src="@drawable/logo"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"/>
+
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/logo"
+        android:background="@color/white">
+        <ImageView
+            android:id="@+id/radioButton0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrowback"
+            android:layout_marginStart="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:textColor="@color/grey"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preventive Medicine"
+            android:textStyle="bold"
+            android:textColor="@color/maroon"
+            android:textSize="20dp"
+            android:layout_marginStart="24dp"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:progressDrawable="@drawable/progress_bar"
+        android:max="50"
+        android:progress="50"
+        android:layout_below="@+id/linear1"/>
+    <TextView
+        android:id="@+id/textview1"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progressBar"
+        android:text="Health Behaviors and Lifestyle"
+        android:textStyle="bold"
+        android:textColor="@color/maroon"
+        android:textSize="20dp"/>
+    <TextView
+        android:id="@+id/textview2"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview1"
+        android:textStyle="bold"
+        android:text="How frequently do you engage in preventive healthcare activities (e.g., regular check-ups, vaccinations, sccreenings)?"/>
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:layout_marginEnd="16dp"
+        android:layout_below="@id/textview2">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Regularly"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="1dp"/>
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Occasionally"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"
+            android:layout_marginEnd="12dp"/>
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rarely"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"/>
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:text="never"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textview3"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="What factors, if any, prevent you from engaging in preventive healthcare activities more regularly?What factors, if any, prevent you from engaging in preventive healthcare activities more regularly?"/>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeee"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="8dp"
+        android:layout_below="@+id/textview3"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textfield_border">
+
+        <EditText
+            android:id="@+id/editTexttwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="Outline the factors"
+            android:textColor="@color/grey" />
+    </RelativeLayout>
+
+<TextView
+    android:id="@+id/tetextv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/relativeee"
+    android:layout_marginTop="10dp"
+    android:text="Do you engage in regular physical activity or exercise?"
+    android:textStyle="bold"/>
+
+    <LinearLayout
+        android:id="@+id/linearr"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:layout_marginEnd="16dp"
+        android:layout_below="@id/tetextv">
+
+        <RadioButton
+            android:id="@+id/radioButton11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Yes,regularly"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="1dp"/>
+
+        <RadioButton
+            android:id="@+id/radioButton12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Yes, occasionally"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"
+            android:layout_marginEnd="12dp"/>
+        <RadioButton
+            android:id="@+id/radioButton13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" No"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"
+            android:layout_marginEnd="1dp"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/ttextv"
+        android:layout_below="@id/linearr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="How many servings of fruits and vegetables do  you consume per day on average?"
+        android:textStyle="bold"/>
+    <RelativeLayout
+        android:id="@+id/relati"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ttextv"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textfield_border">
+
+        <EditText
+            android:id="@+id/edittexttt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kindly select an option"
+            android:textColor="@color/grey"
+            android:padding="5dp"
+            android:background="@android:color/transparent"
+            android:layout_toStartOf="@id/checkBox"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- CheckBox -->
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:background="@color/maroon"
+            android:button="@drawable/keyboarddown"
+            />
+    </RelativeLayout>
+<TextView
+    android:id="@+id/text"
+    android:layout_below="@id/relati"
+    android:layout_marginTop="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Do you smoke tobacco or use any other form of nicotine products?"
+    android:textStyle="bold"/>
+
+    <LinearLayout
+        android:id="@+id/linearre"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:layout_marginStart="56dp"
+        android:layout_below="@id/text">
+
+        <RadioButton
+            android:id="@+id/radioButton14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"
+            android:layout_marginStart="12dp"/>
+
+        <RadioButton
+            android:id="@+id/radioButton15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:textColor="@color/maroon"
+            android:layout_marginStart="50dp"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/view"
+        android:layout_below="@+id/linearre"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Do you consume alcoholic beverages?"/>
+
+    <LinearLayout
+        android:id="@+id/linea"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:layout_marginEnd="16dp"
+        android:layout_below="@id/view">
+
+        <RadioButton
+            android:id="@+id/radioButt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Yes,regularly"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="1dp"/>
+
+        <RadioButton
+            android:id="@+id/radioButto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Yes, occasionally"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"
+            android:layout_marginEnd="12dp"/>
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" No"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"
+            android:layout_marginEnd="1dp"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_below="@id/linea"
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/maroon"
+        android:text="Next"
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"/>
+
+
+    </RelativeLayout>
+</ScrollView>
+

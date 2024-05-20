@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/baige"
+    android:layout_height="wrap_content">
+<RelativeLayout
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".HouseHoldActivity">
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="50dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/baige"
+        android:src="@drawable/logo" />
+    <TextView
+        android:id="@+id/illness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="70dp"
+        android:background="@color/white"
+        android:textStyle="bold"
+        android:textColor="@color/maroon"
+        android:textSize="20dp"
+        android:text="Household Illness"
+        android:drawableLeft="@drawable/ic_custom_back"
+        android:drawablePadding="70dp"
+        android:gravity="center_vertical"
+        />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:progressDrawable="@drawable/progress_bar"
+        android:max="50"
+        android:progress="50"
+        android:layout_below="@+id/illness"/>
+
+    <TextView
+        android:id="@+id/illnesses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/maroon"
+        android:textSize="20dp"
+        android:text="Household Illnesses"
+        android:layout_below="@+id/progressBar"
+        />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/illnesses"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:text="In the past month, how many members of your household have experienced illness symptoms(e.g. fever, cough, diarrhea)?" />
+
+    <RelativeLayout
+        android:id="@+id/relativeone"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="8dp"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textfield_border">
+
+        <EditText
+            android:id="@+id/editTextone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text=""
+            android:textColor="@color/grey" />
+
+        <CheckBox
+            android:id="@+id/checkBoxone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp" />
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/relativeone"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:text="What types of illnesses have affected your household members in the past month?"/>
+
+
+    <RelativeLayout
+        android:id="@+id/relativetwo"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="8dp"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textfield_border">
+
+        <EditText
+            android:id="@+id/editTexttwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="Enlist the types of illnesses"
+            android:textColor="@color/grey" />
+
+        <CheckBox
+            android:id="@+id/checkBoxtwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp" />
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/relativetwo"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:text="Did any household member require medical treatment for their illness?"/>
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/textView3">
+        <RadioButton
+            android:id="@+id/radioButton0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"/>
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"
+            android:layout_marginEnd="24dp"/>
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sometimes"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linear1"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:text="If yes, please indicate the type of medical treatment sought:"/>
+
+    <RelativeLayout
+        android:id="@+id/relativethree"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="8dp"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textfield_border">
+
+        <EditText
+            android:id="@+id/editTextthree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="Outline the type of medical treatment"
+            android:textColor="@color/grey" />
+
+        <CheckBox
+            android:id="@+id/checkBoxthree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/relativethree">
+        <TextView
+            android:layout_width="260dp"
+            android:layout_height="20dp"
+            android:textStyle="bold"
+            android:text="Is any household member currently sick?"/>
+
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"/>
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"
+            android:layout_marginEnd="0dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear3"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/linear2">
+        <TextView
+            android:layout_width="240dp"
+            android:layout_height="20dp"
+            android:textStyle="bold"
+            android:text="If yes, has he/she sought medical attention?"/>
+
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"/>
+
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"
+            android:layout_marginEnd="0dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear4"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/linear3">
+        <TextView
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="0dp"
+            android:maxLines="2"
+            android:textStyle="bold"
+            android:text="If no, is he/she okay to be referred to\na nearby medical facility?"/>
+
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"/>
+
+        <RadioButton
+            android:id="@+id/radioButton8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"
+            android:layout_marginEnd="0dp"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linear4"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:text="If yes, kindly proceed to fill the"/>
+    <RelativeLayout
+        android:id="@+id/relativefour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView5">
+
+        <!-- TextView -->
+        <TextView
+            android:id="@+id/TextView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="150dp"
+            android:textSize="16dp"
+            android:textColor="@color/maroon"
+            android:textStyle="bold"
+            android:text="MEDICAL REPORT FORM" />
+
+        <!-- Underline View -->
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@id/TextView6"
+            android:background="@color/maroon" />
+    </RelativeLayout>
+<Button
+    android:layout_width="match_parent"
+    android:layout_below="@id/relativefour"
+    android:layout_height="20dp"
+    android:text="Next"
+    android:textColor="@color/white"
+    android:backgroundTint="@color/maroon"/>
+
+</RelativeLayout>
+</ScrollView>

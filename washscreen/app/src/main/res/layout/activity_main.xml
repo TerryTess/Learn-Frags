@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/baige"
+        tools:context=".MainActivity">
+
+        <!-- Add an AppBar -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/baige">
+
+            <!-- Add a Toolbar inside the AppBar -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/baige"
+                android:navigationIcon="@drawable/ic_custom_back" />
+
+
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/logo"
+                android:background="@color/baige" />
+
+            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentCentre="true"
+                android:layout_alignParentEnd="true"
+                android:text="Water and Sanitation Hygiene"
+                android:textColor="@color/maroon"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_custom_back"
+
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:text="Water access and Quality"
+                android:background="@color/baige"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/maroon"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:text="What is your primary source of drinking water"
+                android:background="@color/baige"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                android:background="@drawable/textfield_border">
+
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="Outline Sources"
+                    android:textColor="@color/grey" />
+
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp" />
+
+
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="How would you rate the reliability of your water suplly"
+                android:background="@color/baige"
+                android:textStyle="bold"
+                android:textSize="17dp"
+
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                android:background="@drawable/textfield_border">
+
+                <EditText
+                    android:id="@+id/editTextone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Outline here ..."
+                    android:textColor="@color/grey"
+                    android:background="@android:color/transparent"
+                    android:layout_marginEnd="40dp" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Do you treat your drinking water before consumption?"
+                android:background="@color/baige"
+                android:textStyle="bold"
+                android:textSize="17dp"
+
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp">
+
+
+                <RadioButton
+                    android:id="@+id/radioButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes"
+                    android:textColor="@color/maroon"
+                    android:textSize="16sp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:textColor="@color/maroon"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="24dp"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sometimes"
+                    android:textColor="@color/maroon"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="If yes, please specify the  method(s) of water treatment used"
+                android:background="@color/baige"
+                android:textStyle="bold"
+                android:textSize="17dp"
+
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                android:background="@drawable/textfield_border">
+
+                <EditText
+                    android:id="@+id/editTexttwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="List them here ..."
+                    android:textColor="@color/grey"
+                    android:background="@android:color/transparent"
+                    android:layout_marginEnd="40dp" />
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:text="Sanitation Facilities"
+                android:background="@color/baige"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/maroon"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="What type sanitation facility do you primarily use?"
+                android:background="@color/baige"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                android:background="@drawable/textfield_border">
+
+                <EditText
+                    android:id="@+id/editTextthree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="List the type of Sanitation used"
+                    android:textColor="@color/grey"
+                    android:background="@android:color/transparent"
+                    android:layout_marginEnd="40dp" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxtwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp" />
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Is the sanitation facility shared with other households ?"
+                android:background="@color/baige"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp">
+
+
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes"
+                    android:textColor="@color/maroon"
+                    android:textSize="16sp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:textColor="@color/maroon"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="24dp"/>
+
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="How often is the sanitation facility cleaned?"
+                android:background="@color/baige"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp">
+
+
+                <RadioButton
+                    android:id="@+id/radioButton6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Daily"
+                    android:textColor="@color/maroon"
+                    android:textSize="16sp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weekly"
+                    android:textColor="@color/maroon"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="24dp"/>
+                <RadioButton
+                    android:id="@+id/radioButton8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Montly"
+                    android:textColor="@color/maroon"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="24dp"/>
+                <RadioButton
+                    android:id="@+id/radioButton9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rarely"
+                    android:textColor="@color/maroon"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="24dp"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:text="Hygiene Practices"
+                android:background="@color/baige"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/maroon"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Do you have access to handwashing facilities with soap and water?"
+                android:background="@color/baige"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp">
+
+
+                <RadioButton
+                    android:id="@+id/radioButton10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes"
+                    android:textColor="@color/maroon"
+                    android:textSize="16sp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:textColor="@color/maroon"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="24dp"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="How frequently do you and your household members wash hand with soap and water?"
+                android:background="@color/baige"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                android:background="@drawable/textfield_border"
+                >
+
+                <EditText
+                    android:id="@+id/editTextseven"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Outline here ..."
+                    android:textColor="@color/grey"
+                    android:background="@android:color/transparent"
+                    android:layout_marginEnd="40dp" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/myButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Next"
+                android:textSize="18sp"
+                android:backgroundTint="@color/maroon"
+                />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,9 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="10dp"
+    android:height="10dp"
+    android:viewportWidth="10.0"
+    android:viewportHeight="10.0">
+    <path
+        android:fillColor="@color/grey" /> <!-- Change to the desired grey color -->
+</vector>
+
