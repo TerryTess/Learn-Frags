@@ -85,39 +85,72 @@ class MainActivity : AppCompatActivity() {
         binding.resulttextview.text = calculateResults()
     }
 
-    fun calculateResults(): String {
-        val digitOperators = parseDigitOperators()
-        if (digitOperators.isEmpty()) return ""
+//    fun calculateResults(): String {
+//        val digitOperators = parseDigitOperators()
+//        if (digitOperators.isEmpty()) return ""
+//
+//        var result = digitOperators[0] as Float
+//
+//        try {
+//            for (i in 1 until digitOperators.size step 2) {
+//                val operator = digitOperators[i] as Char
+//                val nextDigit = digitOperators[i + 1] as Float
+//
+//                result = when (operator) {
+//                    '+' -> result + nextDigit
+//                    '-' -> result - nextDigit
+//                    '*' -> result * nextDigit
+//                    '/' ->
+//                        {
+//                        if (nextDigit == 0f) throw ArithmeticException("Division by zero")
+//                        result / nextDigit
+//                    }
+//                    else -> throw IllegalArgumentException("Invalid Operator")
+//                }
+//            }
+//        } catch (e: ArithmeticException) {
+//            return "Error Invalid"
+//        } catch (e: IllegalArgumentException) {
+//            return "Error: Invalid 2"
+//        } catch (e: Exception) {
+//            return "Error3"
+//        }
+//
+//        return result.toString()
+//    }
+fun calculateResults(): String {
+    val digitOperators = parseDigitOperators()
+    if (digitOperators.isEmpty()) return ""
 
-        var result = digitOperators[0] as Float
+    var result = digitOperators[0] as Float
 
-        try {
-            for (i in 1 until digitOperators.size step 2) {
-                val operator = digitOperators[i] as Char
-                val nextDigit = digitOperators[i + 1] as Float
+    try {
+        for (i in 1 until digitOperators.size step 2) {
+            val operator = digitOperators[i] as Char
+            val nextDigit = digitOperators[i + 1] as Float
 
-                result = when (operator) {
-                    '+' -> result + nextDigit
-                    '-' -> result - nextDigit
-                    '*' -> result * nextDigit
-                    '/' ->
-                        {
-                        if (nextDigit == 0f) throw ArithmeticException("Division by zero")
-                        result / nextDigit
-                    }
-                    else -> throw IllegalArgumentException("Invalid Operator")
+            result = when (operator) {
+                '+' -> result + nextDigit
+                '-' -> result - nextDigit
+                '*' -> result * nextDigit
+                '/' -> {
+                    if (nextDigit == 0f) throw ArithmeticException("Division by zero")
+                    result / nextDigit
                 }
+                else -> throw IllegalArgumentException("Invalid Operator: $operator")
             }
-        } catch (e: ArithmeticException) {
-            return "Error Invalid"
-        } catch (e: IllegalArgumentException) {
-            return "Error: Invalid 2"
-        } catch (e: Exception) {
-            return "Error3"
         }
-
-        return result.toString()
+    } catch (e: ArithmeticException) {
+        return "Error: Division by zero"
+    } catch (e: IllegalArgumentException) {
+        return "Error: Invalid operator"
+    } catch (e: Exception) {
+        return "Error: Unknown error occurred"
     }
+
+    return result.toString()
+}
+
 
     fun parseDigitOperators(): MutableList<Any> {
         val list = mutableListOf<Any>()
