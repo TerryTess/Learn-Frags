@@ -15,10 +15,10 @@ class MainActivity : AppCompatActivity() {
         val viewPager: ViewPager2 = findViewById(R.id.pager)
         val tabLayout: TabLayout = findViewById(R.id.tab_layout)
 
-        // Set up the ViewPager with an adapter
+
         viewPager.adapter = MyPagerAdapter(this)
 
-        // Set up the TabLayoutMediator to link the TabLayout and the ViewPager
+
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = when (position) {
                 0 -> "Tab 1"
