@@ -1,20 +1,42 @@
 package com.example.components
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.components.databinding.ActivityMainBinding
+import com.google.android.material.bottomappbar.BottomAppBar
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setupBottomAppBar()
+    }
+
+    private fun setupBottomAppBar() {
+        val bottomAppBar: BottomAppBar = binding.bottomAppBar
+        bottomAppBar.setNavigationOnClickListener {
+
+
+            bottomAppBar.setOnMenuItemClickListener { menuItem ->
+                when (menuItem.itemId) {
+                    R.id.menu_settings -> {
+                        true
+                    }
+
+                    R.id.menu_about -> {
+                        true
+
+                    }
+
+                    else -> false
+                }
+            }
+            binding.fab.setOnClickListener {
+            }
         }
     }
 }

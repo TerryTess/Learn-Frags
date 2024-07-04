@@ -2,15 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!-- Settings Icon -->
     <item
         android:id="@+id/menu_settings"
         android:icon="@drawable/settings_icon"
         android:title="@string/settings"
         app:showAsAction="ifRoom|withText"/>
 
+    <!-- About Icon -->
     <item
         android:id="@+id/menu_about"
         android:icon="@drawable/about_icon"
         android:title="@string/about"
         app:showAsAction="ifRoom|withText"/>
+
 </menu>
