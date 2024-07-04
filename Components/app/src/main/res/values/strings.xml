@@ -3,6 +3,13 @@
     <string name="about">about</string>
     <string name="settings">settings</string>
     <string name="add_button">Add new item</string>
+    <string name="favorite" />
+    <string name="content_description_favorite" />
+    <string name="search" />
+    <string name="content_description_search" />
+    <string name="content_description_more" />
+    <string name="more" />
+    <string name="page_title" />
 
 
 </resources>
