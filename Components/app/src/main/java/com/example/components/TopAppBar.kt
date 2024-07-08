@@ -1,35 +1,48 @@
-package com.example.components
-
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
+import com.example.components.R
 import com.example.components.databinding.ActivityMainBinding
 
+class MainActivity : AppCompatActivity() {
 
-class TopAppBar : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
+        // Set toolbar as support action bar
+        setSupportActionBar(binding.topbar)
 
-        val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding.handler = this
-
-
-        val toolbar = binding.topAppBar
-        toolbar.setOnMenuItemClickListener { menuitem ->
-            when (menuitem.itemId) {
-                R.id.favorite -> {
-                    Toast.makeText(this, "Favorite Clicked", Toast.LENGTH_SHORT).show()
+        // Handle menu item clicks
+        binding.topbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.search -> {
+                    // Handle settings click
+                    Toast.makeText(this, "Settings clicked", Toast.LENGTH_SHORT).show()
                     true
                 }
-                R.id.search -> {
-                    Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show()
+                R.id.favorite -> {
+                    // Handle about click
+                    Toast.makeText(this, "About clicked", Toast.LENGTH_SHORT).show()
                     true
                 }
                 else -> false
             }
+        }
+
+        // Handle button click
+        binding.textbutton.setOnClickListener {
+            Toast.makeText(this, "Text Button clicked", Toast.LENGTH_SHORT).show()
+            // Add more functionality here if needed
+        }
+
+        // Handle image view click (if needed)
+        binding.imageview.setOnClickListener {
+            Toast.makeText(this, "Image clicked", Toast.LENGTH_SHORT).show()
+            // Add more functionality related to the image here
         }
     }
 }

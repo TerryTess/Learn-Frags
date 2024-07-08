@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
         bottomAppBar.setNavigationOnClickListener {
 
 
-            bottomAppBar.setOnMenuItemClickListener { menuItem ->
-                when (menuItem.itemId) {
+            bottomAppBar.setOnMenuItemClickListener { Item ->
+                when (Item.itemId) {
                     R.id.menu_settings -> {
                         true
                     }

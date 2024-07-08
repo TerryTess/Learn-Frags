@@ -25,7 +25,7 @@
         android:backgroundTint="@color/green">
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topAppBar"
+            android:id="@+id/topbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/green"
@@ -35,13 +35,25 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-
-
     <ImageView
+        android:id="@+id/imageview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="20dp"
         android:src="@drawable/img"
-        android:padding="20dp"/>
+        app:layout_anchor="@+id/textbutton"
+        app:layout_anchorGravity="top|center" />
+
+    <Button
+        android:id="@+id/textbutton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+
+        android:text="Text Button" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
    </layout>
