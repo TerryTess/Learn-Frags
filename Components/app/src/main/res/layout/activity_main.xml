@@ -28,30 +28,85 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardView"
-            android:layout_width="0dp"
+            android:id="@+id/card"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:focusable="true"
-            android:clickable="true"
-            app:cardBackgroundColor="@color/greener"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
-            app:strokeColor="@color/black"
-            app:strokeWidth="2dp"
-            app:contentPadding="16dp"
-            app:layout_constraintTop_toBottomOf="@id/topbar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/greener"
+            app:layout_constraintTop_toBottomOf="@+id/topbar">
 
-            <!-- Content inside the card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+        <!-- Media -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="194dp"
+            app:srcCompat="@drawable/img"
+            android:scaleType="centerCrop"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+        <!-- Title, secondary and supporting text -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PANDA"
+            android:textColor="@color/green"
+            android:textStyle="bold"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="For the love of Pandas"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="?android:attr/textColorSecondary"
+            />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Material Card"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-        </com.google.android.material.card.MaterialCardView>
+                android:layout_marginTop="16dp"
+                android:text="Panda is an animal.It is black and white. It loooks like a big cat. I might buy one as I grow older."
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="?android:attr/textColorSecondary"
+                />
 
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="ADD"
+            style="?attr/borderlessButtonStyle"
+            />
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REMOVE"
+                style="?attr/borderlessButtonStyle"
+                />
+        </LinearLayout>
+
+        </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
