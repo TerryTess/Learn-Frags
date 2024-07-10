@@ -16,8 +16,25 @@ class MainActivity : AppCompatActivity() {
 
         setupBottomAppBar()
         setupTopAppBar()
-        setupClickListeners()
+           }
+    private fun setupTopAppBar() {
+        setSupportActionBar(binding.topbar)
+
+        binding.topbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.search -> {
+                    Toast.makeText(this, "Search clicked", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                R.id.favorite -> {
+                    Toast.makeText(this, "Favorite clicked", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                else -> false
+            }
+        }
     }
+
 
     private fun setupBottomAppBar() {
         val bottomAppBar: BottomAppBar = binding.bottomAppBar
@@ -37,39 +54,11 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 else -> false
-            }
+           }
         }
 
         binding.fab.setOnClickListener {
             Toast.makeText(this, "FAB clicked", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    private fun setupTopAppBar() {
-        setSupportActionBar(binding.topbar)
-
-        binding.topbar.setOnMenuItemClickListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.search -> {
-                    Toast.makeText(this, "Search clicked", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.favorite -> {
-                    Toast.makeText(this, "Favorite clicked", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                else -> false
-            }
-        }
-    }
-
-    private fun setupClickListeners() {
-        binding.textbutton.setOnClickListener {
-            Toast.makeText(this, "Text Button clicked", Toast.LENGTH_SHORT).show()
-        }
-
-        binding.imageview.setOnClickListener {
-            Toast.makeText(this, "Image clicked", Toast.LENGTH_SHORT).show()
         }
     }
 }

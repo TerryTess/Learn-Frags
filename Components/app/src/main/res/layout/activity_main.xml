@@ -9,63 +9,84 @@
             type="com.example.components.MainActivity" />
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/green">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topbar"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:backgroundTint="@color/green"
+            app:title="@string/page_title"
+            app:menu="@menu/top_app_bar"
+            app:navigationIcon="@drawable/menu_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/topbar"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:clickable="true"
+            app:cardBackgroundColor="@color/greener"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:strokeColor="@color/black"
+            app:strokeWidth="2dp"
+            app:contentPadding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/topbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Content inside the card -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Material Card"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/topbar"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <!-- Content within CoordinatorLayout -->
+
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:id="@+id/bottomAppBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
                 android:backgroundTint="@color/green"
-                app:title="@string/page_title"
-                app:menu="@menu/top_app_bar"
-                app:navigationIcon="@drawable/menu_icon" />
-        </com.google.android.material.appbar.AppBarLayout>
+                app:fabAlignmentMode="center"
+                app:menu="@menu/bottom_app_bar"
+                app:navigationIcon="@drawable/menu" />
 
-        <ImageView
-            android:id="@+id/imageview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:src="@drawable/img"
-            app:layout_anchor="@+id/textbutton"
-            app:layout_anchorGravity="top|center" />
+            <!-- FloatingActionButton -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/add_icon"
+                android:backgroundTint="@color/black"
+                app:layout_anchor="@id/bottomAppBar"
+                android:tint="@color/white"
+                android:contentDescription="@string/add_button"
+                app:layout_anchorGravity="center" />
 
-        <Button
-            android:id="@+id/textbutton"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:text="Text Button" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottomAppBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:backgroundTint="@color/green"
-            app:fabAlignmentMode="center"
-            app:menu="@menu/bottom_app_bar"
-            app:navigationIcon="@drawable/menu" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/add_icon"
-            android:backgroundTint="@color/black"
-            app:layout_anchor="@id/bottomAppBar"
-            android:tint="@color/white"
-            android:contentDescription="@string/add_button" />
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
+
+
+
