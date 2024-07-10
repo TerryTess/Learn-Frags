@@ -1,6 +1,7 @@
 package com.example.components
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.components.databinding.ActivityMainBinding
 import com.google.android.material.bottomappbar.BottomAppBar
@@ -14,29 +15,61 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupBottomAppBar()
+        setupTopAppBar()
+        setupClickListeners()
     }
 
     private fun setupBottomAppBar() {
         val bottomAppBar: BottomAppBar = binding.bottomAppBar
         bottomAppBar.setNavigationOnClickListener {
 
+            Toast.makeText(this, "Navigation icon clicked", Toast.LENGTH_SHORT).show()
+        }
 
-            bottomAppBar.setOnMenuItemClickListener { Item ->
-                when (Item.itemId) {
-                    R.id.menu_settings -> {
-                        true
-                    }
-
-                    R.id.menu_about -> {
-                        true
-
-                    }
-
-                    else -> false
+        bottomAppBar.setOnMenuItemClickListener { item ->
+            when (item.itemId) {
+                R.id.menu_settings -> {
+                    Toast.makeText(this, "Settings clicked", Toast.LENGTH_SHORT).show()
+                    true
                 }
+                R.id.menu_about -> {
+                    Toast.makeText(this, "About clicked", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                else -> false
             }
-            binding.fab.setOnClickListener {
+        }
+
+        binding.fab.setOnClickListener {
+            Toast.makeText(this, "FAB clicked", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun setupTopAppBar() {
+        setSupportActionBar(binding.topbar)
+
+        binding.topbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.search -> {
+                    Toast.makeText(this, "Search clicked", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                R.id.favorite -> {
+                    Toast.makeText(this, "Favorite clicked", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                else -> false
             }
+        }
+    }
+
+    private fun setupClickListeners() {
+        binding.textbutton.setOnClickListener {
+            Toast.makeText(this, "Text Button clicked", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.imageview.setOnClickListener {
+            Toast.makeText(this, "Image clicked", Toast.LENGTH_SHORT).show()
         }
     }
 }

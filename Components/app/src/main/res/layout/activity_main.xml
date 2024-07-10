@@ -1,31 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottomAppBar"
+    <data>
+        <variable
+            name="handler"
+            type="com.example.components.MainActivity" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:backgroundTint="@color/green"
-        app:fabAlignmentMode="center"
-        app:menu="@menu/bottom_app_bar"
-        app:navigationIcon="@drawable/menu"/>
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/add_icon"
-        android:backgroundTint="@color/black"
-        app:layout_anchor="@id/bottomAppBar"
-        android:tint="@color/white"
-        android:contentDescription="@string/add_button"/>
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/green">
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/green"
+                app:title="@string/page_title"
+                app:menu="@menu/top_app_bar"
+                app:navigationIcon="@drawable/menu_icon" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ImageView
+            android:id="@+id/imageview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:src="@drawable/img"
+            app:layout_anchor="@+id/textbutton"
+            app:layout_anchorGravity="top|center" />
+
+        <Button
+            android:id="@+id/textbutton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="Text Button" />
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:backgroundTint="@color/green"
+            app:fabAlignmentMode="center"
+            app:menu="@menu/bottom_app_bar"
+            app:navigationIcon="@drawable/menu" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/add_icon"
+            android:backgroundTint="@color/black"
+            app:layout_anchor="@id/bottomAppBar"
+            android:tint="@color/white"
+            android:contentDescription="@string/add_button" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
