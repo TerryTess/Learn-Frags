@@ -1,25 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/white" />
-
-    <corners android:radius="0dp" />
-
-    <padding
-        android:left="0dp"
+    <solid android:color="@color/white"/>
+    <corners android:radius="0dp"/>
+    <padding android:left="0dp"
         android:right="0dp"
         android:top="0dp"
-        android:bottom="0dp" />
-
-    <size
-        android:width="200dp"
-        android:height="200dp" />
-
-    <gradient
-        android:startColor="@color/white"
-        android:endColor="@color/white"
-        android:angle="0" />
-
-    <stroke
-        android:width="1dp"
-        android:color="@android:color/transparent" />
+        android:bottom="0dp"/>
+    <size android:width="200dp"
+        android:height="200dp"/>
+    <pathData
+        android:pathData="M 100,10 L 190,50 L 190,150 L 100,190 L 10,150 L 10,50 Z"
+        android:fillColor="@color/white"/>
 </shape>
