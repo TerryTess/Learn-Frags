@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Components"
         tools:targetApi="31">
         <activity
+            android:name=".drawer"
+            android:exported="false" />
+        <activity
             android:name=".Buttons"
             android:exported="false" />
         <activity

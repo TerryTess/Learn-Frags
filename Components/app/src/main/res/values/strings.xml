@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Components</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
     <string name="about">about</string>
     <string name="settings">settings</string>
     <string name="add_button">Add new item</string>

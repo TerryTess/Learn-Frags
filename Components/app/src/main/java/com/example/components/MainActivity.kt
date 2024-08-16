@@ -1,64 +1,52 @@
-package com.example.components
-
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
+import com.example.components.R
+import com.example.components.databinding.ActivityDrawerBinding
 import com.example.components.databinding.ActivityMainBinding
-import com.google.android.material.bottomappbar.BottomAppBar
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class drawerSetup : AppCompatActivity() {
+    private lateinit var binding: ActivityDrawerBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityDrawerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupBottomAppBar()
-        setupTopAppBar()
-           }
-    private fun setupTopAppBar() {
-        setSupportActionBar(binding.topbar)
+        // Set up DrawerLayout and NavigationView
+        val drawerLayout: DrawerLayout = binding.drawerlayout
+        val navView = binding.navView
 
-        binding.topbar.setOnMenuItemClickListener { menuItem ->
+        // Set up navigation drawer toggle
+        val toggle = ActionBarDrawerToggle(this, drawerLayout, binding.topbar,R.string.open,
+            R.string.close
+        )
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        // Handle navigation item clicks
+        navView.setNavigationItemSelectedListener { menuItem ->
+            // Handle navigation view item clicks here
             when (menuItem.itemId) {
-                R.id.search -> {
-                    Toast.makeText(this, "Search clicked", Toast.LENGTH_SHORT).show()
+                R.id.navhome -> {
+                    // Handle Home click
                     true
                 }
-                R.id.favorite -> {
-                    Toast.makeText(this, "Favorite clicked", Toast.LENGTH_SHORT).show()
+                R.id.task -> {
+                    // Handle Task click
+                    true
+                }
+                R.id.navaccountsummary -> {
+                    // Handle Account Summary click
+                    true
+                }
+                R.id.navtransfer -> {
+                    // Handle Transfer click
                     true
                 }
                 else -> false
             }
-        }
-    }
-
-
-    private fun setupBottomAppBar() {
-        val bottomAppBar: BottomAppBar = binding.bottomAppBar
-        bottomAppBar.setNavigationOnClickListener {
-
-            Toast.makeText(this, "Navigation icon clicked", Toast.LENGTH_SHORT).show()
-        }
-
-        bottomAppBar.setOnMenuItemClickListener { item ->
-            when (item.itemId) {
-                R.id.menu_settings -> {
-                    Toast.makeText(this, "Settings clicked", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.menu_about -> {
-                    Toast.makeText(this, "About clicked", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                else -> false
-           }
-        }
-
-        binding.fab.setOnClickListener {
-            Toast.makeText(this, "FAB clicked", Toast.LENGTH_SHORT).show()
         }
     }
 }
