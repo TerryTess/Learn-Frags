@@ -1,14 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/white"/>
-    <corners android:radius="0dp"/>
-    <padding android:left="0dp"
-        android:right="0dp"
-        android:top="0dp"
-        android:bottom="0dp"/>
-    <size android:width="200dp"
-        android:height="200dp"/>
-    <pathData
-        android:pathData="M 100,10 L 190,50 L 190,150 L 100,190 L 10,150 L 10,50 Z"
-        android:fillColor="@color/white"/>
+<!-- res/drawable/hexagon_shape.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <path
+        android:fillColor="#00BCD4"
+        android:pathData="M50,0 L93.301,25 L93.301,75 L50,100 L6.699,75 L6.699,25 Z" />
+
 </shape>
