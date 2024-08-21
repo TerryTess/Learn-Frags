@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/bottomNavMyAccounts"
+        android:title="My accounts"
+        android:icon="@drawable/statements_icon"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/emptyMiddle"
+        android:title=""
+        android:enabled="false"
+        android:icon="@android:color/transparent" />
+
+    <item
+        android:id="@+id/profileIcon"
+        android:title="Profile"
+        android:icon="@drawable/customercare_icon"
+        app:showAsAction="ifRoom" />
+</menu>

@@ -16,47 +16,59 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/linear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card11"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white">
-
-            <ImageView
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toobar"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/profile_icon" />
-        </com.google.android.material.card.MaterialCardView>
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/view"
+                android:background="@color/white">
 
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card2"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/notification_icon" />
-        </com.google.android.material.card.MaterialCardView>
-    </LinearLayout>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/rectangular_card"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="4dp"
+                        app:layout_constraintEnd_toStartOf="@+id/notification"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintVertical_bias="0.5"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rectangular Card"
+                            android:padding="16dp"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/notification"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@color/white"
+                        app:cardCornerRadius="24dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+               />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/profile"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@color/white"
+                        app:cardCornerRadius="24dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/notification"
+                       />
+                </LinearLayout>
+            </com.google.android.material.appbar.MaterialToolbar>
+
+
 
     <TextView
         android:id="@+id/textview"
@@ -66,20 +78,16 @@
         android:gravity="center"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/linear"
+        app:layout_constraintTop_toBottomOf="@id/toobar"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
-
+         />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview"
-
-
-        >
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview"
+        app:layout_constraintVertical_bias="0.164">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/outerCardView"
@@ -135,7 +143,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardd6"
+            android:id="@+id/ccardd6"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:background="@color/white"
@@ -270,12 +278,10 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/redeem_icon" />
-
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -288,7 +294,6 @@
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
-
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card5"
