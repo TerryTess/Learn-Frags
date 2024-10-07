@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Set default fragment
         supportFragmentManager.beginTransaction().replace(R.id.container, homeFragment).commit()
 
         binding.bottomnav.setOnItemSelectedListener { item ->

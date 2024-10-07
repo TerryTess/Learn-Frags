@@ -21,4 +21,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "programatically"
 include(":app")
+include(":app")
+include(":app")
+include(":app")
+include(":app")
  

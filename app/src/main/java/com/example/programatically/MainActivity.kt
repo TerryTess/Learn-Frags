@@ -1,5 +1,6 @@
 package com.example.programatically
 
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -15,15 +16,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         linearLayout = findViewById(R.id.linearLayout)
 //        setSupportActionBar()
-        addTextView("Hello")
-        addTextView("From")
-        addTextView("Terry")
+        addTextView(getString(R.string.hello))
+        addTextView(getString(R.string.from))
+        addTextView(getString(R.string.terry))
 
     }
     private fun addTextView (label : String){
         val view = TextView(this)
         view.text = label
         view.textSize = 28f
+        view.setTextColor(Color.parseColor("#ff0000"))
         linearLayout.addView(view )
     }
 }

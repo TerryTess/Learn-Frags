@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.example.calculatorapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -16,157 +17,124 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         binding.apply {
-            // digits buttons
             listOf(
-                button0, button1, button2, button3, button4,
+                buttonzero, button1, button2, button3, button4,
                 button5, button6, button7, button8, button9
             ).forEach { button ->
                 button.setOnClickListener { numberAction(it) }
             }
-            // operators buttons
-            buttonDecimal.setOnClickListener { decimalAction(it) }
 
             listOf(buttonAdd, buttonSubtract, buttonMultiply, buttonDivide).forEach { button ->
                 button.setOnClickListener { operationAction(it) }
             }
 
-            // Clear, delete and equals buttons
             buttonClear.setOnClickListener { allClearAction() }
             buttonDelete.setOnClickListener { backSpaceAction() }
-            buttonEquals.setOnClickListener { equalsAction(it) }
+            buttonequals.setOnClickListener { equalsAction(it) }
         }
     }
 
-    fun numberAction(view: View) {
+    private fun numberAction(view: View) {
         val button = view as Button
         val buttonText = button.text.toString()
-        binding.workingtextview.append(buttonText)
-        canAddOperation = true
+
         if (buttonText == "." && canAddDecimal) {
+            binding.edittext1.append(buttonText)
             canAddDecimal = false
+        } else if (buttonText != ".") {
+            binding.edittext1.append(buttonText)
         }
+
+        canAddOperation = true
     }
 
-    fun decimalAction(view: View) {
-        if (canAddDecimal) {
-            binding.workingtextview.append(".")
-            canAddDecimal = false
-        }
-    }
-
-    fun operationAction(view: View) {
+    private fun operationAction(view: View) {
         val button = view as Button
-        val buttonText = button.text.toString()
+        val operator = button.text.toString()
+
         if (canAddOperation) {
-            binding.workingtextview.append(buttonText)
+            binding.edittext1.append(operator)
             canAddOperation = false
             canAddDecimal = true
         }
     }
 
+
     fun allClearAction() {
-        binding.workingtextview.text = ""
+        binding.edittext1.text.clear()
         binding.resulttextview.text = ""
         canAddOperation = true
         canAddDecimal = true
     }
 
     fun backSpaceAction() {
-        val length = binding.workingtextview.length()
+        val length = binding.edittext1.length()
         if (length > 0) {
-            binding.workingtextview.text = binding.workingtextview.text.subSequence(0, length - 1)
+            binding.edittext1.text.replace(   0, length,
+                binding.edittext1.text.subSequence(0, length - 1)
+            )
         }
     }
 
     fun equalsAction(view: View) {
-        val button = view as Button
-        val results = button.text.toString()
-        binding.resulttextview.text = calculateResults()
+        binding.resulttextview.text = performCalculation()
     }
 
-//    fun calculateResults(): String {
-//        val digitOperators = parseDigitOperators()
-//        if (digitOperators.isEmpty()) return ""
-//
-//        var result = digitOperators[0] as Float
-//
-//        try {
-//            for (i in 1 until digitOperators.size step 2) {
-//                val operator = digitOperators[i] as Char
-//                val nextDigit = digitOperators[i + 1] as Float
-//
-//                result = when (operator) {
-//                    '+' -> result + nextDigit
-//                    '-' -> result - nextDigit
-//                    '*' -> result * nextDigit
-//                    '/' ->
-//                        {
-//                        if (nextDigit == 0f) throw ArithmeticException("Division by zero")
-//                        result / nextDigit
-//                    }
-//                    else -> throw IllegalArgumentException("Invalid Operator")
-//                }
-//            }
-//        } catch (e: ArithmeticException) {
-//            return "Error Invalid"
-//        } catch (e: IllegalArgumentException) {
-//            return "Error: Invalid 2"
-//        } catch (e: Exception) {
-//            return "Error3"
-//        }
-//
-//        return result.toString()
-//    }
-fun calculateResults(): String {
-    val digitOperators = parseDigitOperators()
-    if (digitOperators.isEmpty()) return ""
 
-    var result = digitOperators[0] as Float
+    private fun performCalculation(): String {
+        val elements = parseDigitOperators()
+        if (elements.isEmpty()) return ""
 
-    try {
-        for (i in 1 until digitOperators.size step 2) {
-            val operator = digitOperators[i] as Char
-            val nextDigit = digitOperators[i + 1] as Float
+        var result = elements[0] as Float
 
-            result = when (operator) {
-                '+' -> result + nextDigit
-                '-' -> result - nextDigit
-                '*' -> result * nextDigit
-                '/' -> {
-                    if (nextDigit == 0f) throw ArithmeticException("Division by zero")
-                    result / nextDigit
+        try {
+            for (i in 1 until elements.size step 2) {
+                val operator = elements[i] as Char
+                val nextNumber = elements[i + 1] as Float
+
+                result = when (operator) {
+                    '+' -> result + nextNumber
+                    '-' -> result - nextNumber
+                    'x' -> result * nextNumber
+                    '/' -> {
+                        if (nextNumber == 0f) throw ArithmeticException("Division by zero")
+                        result / nextNumber
+                    }
+                    else -> throw IllegalArgumentException("Invalid Operator: $operator")
                 }
-                else -> throw IllegalArgumentException("Invalid Operator: $operator")
             }
+        } catch (e: ArithmeticException) {
+            return "Error: Division by zero"
+        } catch (e: IllegalArgumentException) {
+            return "Error: Invalid operator"
+        } catch (e: Exception) {
+            return "Error: Unknown error occurred"
         }
-    } catch (e: ArithmeticException) {
-        return "Error: Division by zero"
-    } catch (e: IllegalArgumentException) {
-        return "Error: Invalid operator"
-    } catch (e: Exception) {
-        return "Error: Unknown error occurred"
+
+        return result.toString()
     }
 
-    return result.toString()
-}
 
 
-    fun parseDigitOperators(): MutableList<Any> {
+    private fun parseDigitOperators(): MutableList<Any> {
         val list = mutableListOf<Any>()
-        var currentDigit = "0"
+        var currentDigit = ""
 
-        for (character in binding.workingtextview.text) {
+        val text = binding.edittext1.text.toString()
+
+        for (character in text) {
             if (character.isDigit() || character == '.') {
                 currentDigit += character
             } else {
-            if (currentDigit.isNotEmpty()) {
-                list.add(currentDigit.toFloat())
-                currentDigit = "0"
+                if (currentDigit.isNotEmpty()) {
+                    list.add(currentDigit.toFloat())
+                    currentDigit = ""
+                }
+                list.add(character)
             }
-            list.add(character)
         }
-    }
 
         if (currentDigit.isNotEmpty()) {
             list.add(currentDigit.toFloat())
@@ -174,4 +142,6 @@ fun calculateResults(): String {
 
         return list
     }
-    }
+
+
+}
