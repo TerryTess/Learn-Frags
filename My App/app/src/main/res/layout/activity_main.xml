@@ -49,18 +49,36 @@
         <!-- Drawer content -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical"> <!-- Align content vertically -->
 
+            <!-- Dot Indicator -->
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/dot_ic"
+            android:layout_marginEnd="8dp"/> <!-- Space between dot and text -->
+
+            <!-- Notification Text -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Notification Drawer"
-                android:padding="16dp"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+                android:text="Missed Call"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_weight="1"/> <!-- Takes available space for text -->
 
-            <!--  other notification items -->
+            <!-- Timestamp -->
+            <TextView
+                android:id="@+id/timestamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:30 AM"
+            android:textColor="@android:color/darker_gray"/> <!-- Light text color for timestamp -->
+
         </LinearLayout>
+
     </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>

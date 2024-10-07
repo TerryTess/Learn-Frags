@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import android.view.Gravity
+import androidx.core.view.GravityCompat
 import com.example.myapp.databinding.ActivityMainBinding // Adjust this import based on your package name
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.openDrawerButton.setOnClickListener {
-            binding.drawerLayout.openDrawer(Gravity.LEFT)
+            binding.drawerLayout.openDrawer(GravityCompat.START)
         }
 
         binding.navigationView.setNavigationItemSelectedListener {
